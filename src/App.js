@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Signup from './Components/Singup';
+import Login from './Components/Login';
+import Home from './Components/Home';
+import { useState } from 'react';
 
 function App() {
+  const [Authnticate, seAuthnticatet] = useState(false);
+
+  const PrivateRoute = ({element}) =>{
+     return Authnticate ? element: <Navigate to = "/Login"/>
+   }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='Appmain'> {/* Corrected className */}
+      <Routes>
+        {/* Redirect the root path to the login page */}
+        <Route path='/' element={<Navigate to='/Login' />} />
+        
+        {/* Routes for login, signup, and home pages */}
+        <Route path='/login' element={<Login/>} />
+        <Route path='/signup' element={<Signup/>} /> {/* Corrected component name */}
+        <Route path='/home' element={<PrivateRoute Element={<Home />} />} />
+
+      </Routes>
     </div>
   );
 }

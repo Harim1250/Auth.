@@ -1,0 +1,73 @@
+.Container {
+    margin: 0 auto; 
+    width: 50%; /* Define a width for proper centering */
+    border: 1px solid red;
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Vertically centers flex items */
+    justify-content: center; /* Horizontally centers flex items */
+    height: 400px; 
+    margin-top: 5rem;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for a cleaner look */
+}
+
+h1 {
+    margin: 20px 0;
+    text-align: center; /* Center the title */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%; /* Make sure form stretches to container width */
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%; /* Full width of form */
+    max-width: 400px; /* Set a max width for readability */
+    box-sizing: border-box; /* Ensure padding doesn't overflow */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+button {
+    margin: 20px 0;
+    padding: 10px 70px;
+    border-radius: 10px;
+    background-color: darkmagenta;
+    color: white;
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Change cursor to pointer for buttons */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+button:hover {
+    background-color: rebeccapurple; /* Darker shade on hover */
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .Container {
+        width: 90%; /* Make container responsive */
+        height: auto; /* Adjust height for smaller screens */
+    }
+
+    button {
+        padding: 10px 40px; /* Adjust button padding for smaller screens */
+    }
+
+    input {
+        max-width: 100%; /* Make input fields responsive */
+    }
+}
